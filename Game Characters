@@ -1,0 +1,52 @@
+/* Create table about the people and what they do here */
+
+Create table recharacters
+(id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT, age INTEGER, first_appearance INTEGER);
+
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Leon S. Kennedy", 21, 2);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Claire Redfield", 19,2);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Sherry Birkin", 12, 2);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Chris Redfield", 25, 1);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Jill Valentine", 24, 1);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Rebecca Chambers", 18, 0);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("William Birkin", 36, 2);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Ada Wong", 24, 2);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Robert Kendo", 40, 2);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Albert Wesker", 38, 1);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Barry Burton", 38, 2);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Steve Burnside", 18, 3.5);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Annette Birkin", ?, 2);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Billy Cohen", 26, 0);
+INSERT INTO recharacters (name, age, first_appearance) VALUES ("Carlos Oliviera", ?, 3);
+
+SELECT * FROM recharacters
+ORDER BY name DESC;
+
+CREATE table games
+(id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    released INTEGER,
+    game_id INTEGER,
+    sequel_id INTEGER);
+    
+INSERT INTO games (title, released, game_id, sequel_id) VALUES ("Resident Evil 1", 1996, 1, 2);
+INSERT INTO games (title, released, game_id, sequel_id) VALUES ("Resident Evil 2", 1998, 2, 3);
+INSERT INTO games (title, released, game_id, sequel_id) Values ("Resident Evil 3: Nemesis", 1999, 3, 4);
+INSERT INTO games (title, released, game_id, sequel_id) VALUES ("Resident Evil Code: Veronica", 2000, 3.5, 4);
+INSERT INTO games (title, released, game_id, sequel_id) VALUES ("Resident Evil 4", 2004, 4, 5);
+INSERT INTO games (title, released, game_id, sequel_id) VALUES ("Resident Evil 5", 2009, 5, 6);
+INSERT INTO games (title, released, game_id, sequel_id) VALUES ("Resident Evil 0", 2002, 0, 1);
+INSERT INTO games (title, released, game_id, sequel_id) VALUES ("Resident Evil 6", 2012, 6, 7);
+INSERT INTO games (title, released, game_id, sequel_id) VALUES ("Resident Evil 7", 2017, 7, 8);
+INSERT INTO games (title, released, game_id, sequel_id) VALUES ("Resident Evil 8", 2021, 8, ?);
+
+SELECT * FROM games ASC;
+
+/* outer join */
+SELECT recharacters.name AS "First Appearance", games.title AS "Game Title"
+    FROM recharacters
+    LEFT OUTER JOIN games
+    ON recharacters.first_appearance = games.game_id
+    ORDER BY games.game_id ASC;
+    
