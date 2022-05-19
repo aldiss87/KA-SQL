@@ -1,0 +1,26 @@
+/* What does the app's SQL look like? */
+
+CREATE table monthly (id INTEGER PRIMARY KEY AUTOINCREMENT, month TEXT, start_date INTEGER, end_date INTEGER, year INTEGER, days_duration INTEGER);
+
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("January", 18, 23, 2021, 6);
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("February", 17, 23, 2021, 7);
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("March", 20, 26, 2021, 7);
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("April", 21, 26, 2021, 6);
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("May", 20, 25, 2021, 6);
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("June", 22, 27, 2021, 6);
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("July", 20, 25, 2021, 6);
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("August", 17, 22, 2021, 6);
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("September", 18, 24, 2021, 7);
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("October", 17, 22, 2021, 6);
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("November", 19, 24, 2021, 6);
+INSERT INTO monthly (month, start_date, end_date, year, days_duration) VALUES ("December", 21, 26, 2021, 6);
+
+SELECT * FROM monthly;
+
+UPDATE monthly SET end_date = 30 WHERE end_date = 26;
+
+SELECT * FROM monthly;
+
+DELETE FROM monthly WHERE month = "December";
+
+SELECT * FROM monthly;
