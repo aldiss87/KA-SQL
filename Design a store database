@@ -1,0 +1,22 @@
+CREATE TABLE stuffnthings (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, stock INTEGER, aisle INTEGER);
+
+INSERT INTO stuffnthings VALUES (1, "worsted weight", 4.99, 15, 11);
+INSERT INTO stuffnthings VALUES (2, "bulky", 5.99, 11, 12);
+INSERT INTO stuffnthings VALUES (3, "super bulky", 6.99, 4, 12);
+INSERT INTO stuffnthings VALUES (4, "knitting needles size 8", 3.99, 1, 10);
+INSERT INTO stuffnthings VALUES (5, "crochet hook size J", 3.99, 9, 10);
+INSERT INTO stuffnthings VALUES (6, "polyester filling", 5.75, 7, 4);
+INSERT INTO stuffnthings VALUES (7, "glue", 2.50, 3, 1);
+INSERT INTO stuffnthings VALUES (8, "acid dye", 2.20, 8, 9);
+INSERT INTO stuffnthings VALUES (9, "stitch markers", 1.25, 30, 10);
+INSERT INTO stuffnthings VALUES (10, "ball winder", 35.50, 12, 10);
+INSERT INTO stuffnthings VALUES (11, "crochet hook set", 109.95, 4, 10);
+INSERT INTO stuffnthings VALUES (12, "knitting needles set", 99.99, 16, 10);
+INSERT INTO stuffnthings VALUES (13, "scissors", 4.05, 20, 4);
+INSERT INTO stuffnthings VALUES (14, "yarn swift", 49.99, 15, 10);
+INSERT INTO stuffnthings VALUES (15, "yarn bag", 25.98, 3, 11);
+
+SELECT * FROM stuffnthings ORDER BY price;
+SELECT aisle, MAX(price) as most_expensive FROM stuffnthings WHERE aisle = "10";
+
+SELECT * FROM stuffnthings;
